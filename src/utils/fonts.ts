@@ -1,4 +1,10 @@
-import { Roboto, Cinzel } from "next/font/google";
+import { Roboto, Cinzel, Inconsolata } from "next/font/google";
+
+const inconsolata_init = Inconsolata({
+    subsets: ["latin"],
+    weight: '400',
+    variable: '--font-inconsolata'
+})
 
 const roboto_init = Roboto({
     subsets: ['latin'],
@@ -14,3 +20,4 @@ const cinzel_init = Cinzel({
 
 export const roboto = roboto_init.variable
 export const cinzel = cinzel_init.variable
+export const inconsolata = inconsolata_init.variable

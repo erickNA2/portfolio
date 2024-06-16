@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { useTheme } from 'next-themes';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { IoLanguageOutline } from 'react-icons/io5';
 import {

@@ -1,8 +1,9 @@
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
-import { roboto, cinzel } from "@/utils/fonts";
+import { roboto, cinzel, inconsolata } from "@/utils/fonts";
 import "./globals.css";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Erick Nunes Portfolio",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto} ${cinzel} relative`}>
+      <body className={`${roboto} ${cinzel} ${inconsolata} relative`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -25,6 +26,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html >
