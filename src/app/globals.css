@@ -66,8 +66,12 @@
   }
 }
 
+html, body {
+  @apply overflow-x-hidden w-[100%]
+}
+
 body {
-  @apply bg-[#F2F3CC] dark:bg-[#11111A] overflow-x-hidden
+  @apply bg-[#F2F3CC] dark:bg-[#11111A]
 }
 
 @layer base {
@@ -76,7 +80,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 

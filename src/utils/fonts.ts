@@ -1,9 +1,9 @@
-import { Roboto, Cinzel, Inconsolata } from "next/font/google";
+import { Roboto, Cinzel,  EB_Garamond } from "next/font/google";
 
-const inconsolata_init = Inconsolata({
+const ebgaramond_init = EB_Garamond({
     subsets: ["latin"],
     weight: '400',
-    variable: '--font-inconsolata'
+    variable: '--font-ebgaramond'
 })
 
 const roboto_init = Roboto({
@@ -20,4 +20,4 @@ const cinzel_init = Cinzel({
 
 export const roboto = roboto_init.variable
 export const cinzel = cinzel_init.variable
-export const inconsolata = inconsolata_init.variable
+export const ebgaramond = ebgaramond_init.variable

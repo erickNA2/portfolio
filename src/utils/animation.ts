@@ -13,7 +13,7 @@ export const animatePageIn = () => {
             yPercent: 0,
         }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 200,
-            stagger: 0.1
+            stagger: 0.2
         })
     }
 }

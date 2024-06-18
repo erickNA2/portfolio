@@ -11,6 +11,9 @@ const Cube: React.FC = () => {
         console.log(theme)
         if (!mountRef.current) return;
 
+        let velX = 0.006
+        let velY = 0.006
+
         // Scene
         const scene = new THREE.Scene();
 
@@ -26,7 +29,7 @@ const Cube: React.FC = () => {
         // Cube geometry and material
         const geometry = new THREE.BoxGeometry(2.4, 2.4, 2.4); // Increase the size of the cube
         const material = new THREE.MeshPhysicalMaterial({
-            color: theme==='dark'? 0xc084fc : 0xff0000,
+            color: theme === 'dark' ? 0xc084fc : 0xff0000,
             clearcoat: 1,
             clearcoatRoughness: 1,
         });
@@ -41,13 +44,18 @@ const Cube: React.FC = () => {
         const animate = () => {
             requestAnimationFrame(animate);
 
-            cube.rotation.x += 0.006
-            cube.rotation.y += 0.008
+            cube.rotation.x += velX
+            cube.rotation.y += velY
 
             renderer.render(scene, camera);
         };
 
         animate();
+
+        window.addEventListener('mousedown',(e) => {
+            velX = -velX
+            velY = -velY
+        })
 
         // Handle window resize
         const handleResize = () => {
@@ -57,11 +65,7 @@ const Cube: React.FC = () => {
         };
 
         window.addEventListener('resize', handleResize);
-        window.addEventListener('scroll', () => {
-            cube.rotation.x += 0.001
-            cube.rotation.y += 0.001
-        })
-
+        
         // Cleanup on unmount
         return () => {
             if (mountRef.current) {
@@ -71,7 +75,7 @@ const Cube: React.FC = () => {
         };
     }, [theme]);
 
-    return <div className='rilative h-full overflow-hidden flex items-center justify-center' ref={mountRef} />;
+    return <div className='rilative h-full w-full flex items-center justify-center' ref={mountRef} />;
 };
 
 export default Cube;
